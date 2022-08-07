@@ -16,7 +16,7 @@ library     (ggpubr)
 ## read data
 
 ``` r
-perseus_output <- read.delim("input files/perseus_output.txt",check.names = F)
+perseus_output <- read.csv("input files/perseus_output.csv",check.names = F)
 volcano_curve  <- read.delim("input files/volcano_curve.txt")
 conditions     <- read.delim("input files/conditions.txt")
 buble_plot     <- read.delim("input files/bubble_plot.txt")
@@ -78,7 +78,7 @@ plot(volcano.plot)
 ## dataframe for PCA and Heatmap
 
 ``` r
-data_clustering <- perseus_output[c(27:34)]
+data_clustering <- perseus_output[c(8:15)]
 ```
 
 ## hierarchical clustering
