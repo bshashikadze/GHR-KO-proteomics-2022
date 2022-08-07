@@ -19,10 +19,10 @@ library     (ggpubr)
 ## read data
 ```{r}
 perseus_output <- read.delim("input files/perseus_output.txt",check.names = F)
-volcano_curve <- read.delim("input files/volcano_curve.txt")
-conditions <- read.delim("input files/conditions.txt")
-buble_plot <- read.delim("input files/bubble_plot.txt")
-ORA_data <- read.delim("input files/ORA_plot.txt")
+volcano_curve  <- read.delim("input files/volcano_curve.txt")
+conditions     <- read.delim("input files/conditions.txt")
+buble_plot     <- read.delim("input files/bubble_plot.txt")
+ORA_data       <- read.delim("input files/ORA_plot.txt")
 ```
 
 
@@ -41,7 +41,7 @@ volcano_curve <- volcano_curve %>%
 
 
 ## plot volcano
-```{r}
+```{r warning=FALSE}
 #define diff abundant proteins
 perseus_output$diff_abundant <- NA
 perseus_output$diff_abundant[perseus_output$Significant == "+" & perseus_output$l2fc > 0] <- "Upregulated"
@@ -195,7 +195,7 @@ plot(pca.plot)
 ```
 
 ## dot plot (figure 4)
-```{r fig.height=3, fig.width=8}
+```{r fig.height=3, fig.width=8, message=FALSE, warning=FALSE}
 data <- buble_plot %>% 
   left_join(perseus_output) %>% 
   select(1:5) 

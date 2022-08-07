@@ -17,10 +17,10 @@ library     (ggpubr)
 
 ``` r
 perseus_output <- read.delim("input files/perseus_output.txt",check.names = F)
-volcano_curve <- read.delim("input files/volcano_curve.txt")
-conditions <- read.delim("input files/conditions.txt")
-buble_plot <- read.delim("input files/bubble_plot.txt")
-ORA_data <- read.delim("input files/ORA_plot.txt")
+volcano_curve  <- read.delim("input files/volcano_curve.txt")
+conditions     <- read.delim("input files/conditions.txt")
+buble_plot     <- read.delim("input files/bubble_plot.txt")
+ORA_data       <- read.delim("input files/ORA_plot.txt")
 ```
 
 ## clean-up the curve
@@ -48,19 +48,8 @@ perseus_output$diff_abundant[perseus_output$Significant != "+" ] <- "n.s."
 
 # number of differentially abundant proteins
 lengt_up <- sum(str_count(perseus_output, "Upregulated"))
-```
-
-    ## Warning in stri_count_regex(string, pattern, opts_regex = opts(pattern)):
-    ## argument is not an atomic vector; coercing
-
-``` r
 lengt_down <- sum(str_count(perseus_output, "Downregulated"))
-```
 
-    ## Warning in stri_count_regex(string, pattern, opts_regex = opts(pattern)):
-    ## argument is not an atomic vector; coercing
-
-``` r
 # plot
 volcano.plot <- ggplot(perseus_output %>%                               
 mutate(diff_abundant = replace(diff_abundant, diff_abundant == "n.s.", "AA"))%>%
@@ -218,11 +207,9 @@ plot(pca.plot)
 data <- buble_plot %>% 
   left_join(perseus_output) %>% 
   select(1:5) 
-```
 
-    ## Joining, by = "Gene"
 
-``` r
+
 dot.plot <- ggplot(data, aes(x = Gene, y= Process, fill = l2fc, size = `-LOG10 p-value`)) +
  geom_point(shape=21)+
  theme_bw() +
