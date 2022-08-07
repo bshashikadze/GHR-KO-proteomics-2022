@@ -7,4 +7,3 @@ Maxquant [proteingroups](https://github.com/ShashikadzeB/GHR-KO-proteomics-2022/
 Next, 2 way anova analysis was performed followed with Tukey's HSD [R code to reproduce the results](https://github.com/ShashikadzeB/GHR-KO-proteomics-2022/blob/main/ANOVA%20analysis/ANOVA_THSD.md)
 
 
-The dataset has been submitted to the ProteomeXchange Consortium via the PRIDE partner repository (PXD$$$$$). 
