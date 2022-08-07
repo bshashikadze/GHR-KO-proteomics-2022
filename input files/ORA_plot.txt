@@ -1,0 +1,12 @@
+geneSet	description	link	size	overlap	expect	enrichmentRatio	pValue	FDR	regulation
+GO:0002576	Platelet degranulation	http://amigo.geneontology.org/amigo/term/GO:0002576	127	17	1.586535215	10.71517344	3.38E-13	2.24E-10	Down in GHR-KO
+GO:0072376	Protein activation cascade	http://amigo.geneontology.org/amigo/term/GO:0072376	92	11	1.149301101	9.571034078	1.92E-08	6.36E-06	Down in GHR-KO
+GO:0034109	Homotypic cell-cell adhesion	http://amigo.geneontology.org/amigo/term/GO:0034109	78	8	0.974407455	8.21011781	5.67E-06	0.000418193	Down in GHR-KO
+GO:1903034	Regulation of response to wounding	http://amigo.geneontology.org/amigo/term/GO:1903034	152	9	1.898845297	4.739722617	0.000123466	0.00512385	Down in GHR-KO
+GO:0006959	Humoral immune response	http://amigo.geneontology.org/amigo/term/GO:0006959	242	11	3.023161591	3.638574939	0.000234245	0.007776931	Down in GHR-KO
+GO:0034976	Response to endoplasmic reticulum stress	http://amigo.geneontology.org/amigo/term/GO:0034976	268	34	5.121480181	6.638705764	0	2.56E-08	Up in GHR-KO
+GO:0035459	Cargo loading into vesicle	http://amigo.geneontology.org/amigo/term/GO:0035459	25	6	0.477750017	12.55886926	6.03E-06	0.0005001	Up in GHR-KO
+GO:0032527	Protein exit from endoplasmic reticulum	http://amigo.geneontology.org/amigo/term/GO:0032527	47	7	0.898170032	7.79362454	2.82E-05	0.001444019	Up in GHR-KO
+GO:0035966	Response to topologically incorrect protein	http://amigo.geneontology.org/amigo/term/GO:0035966	188	21	3.592680127	5.845218405	7.72E-11	2.56E-08	Up in GHR-KO
+GO:0006457	Protein folding	http://amigo.geneontology.org/amigo/term/GO:0006457	210	19	4.013100142	4.734494363	2.15E-08	3.57E-06	Up in GHR-KO
+GO:0002181	Cytoplasmic translation	http://amigo.geneontology.org/amigo/term/GO:0002181	92	8	1.758120062	4.550314949	0.000374235	0.012424611	Up in GHR-KO

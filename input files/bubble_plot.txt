@@ -1,0 +1,83 @@
+Gene 	Process
+SDF2L1	Response to ER stress
+ITPR1	Response to ER stress
+NPLOC4	Response to ER stress
+AGR2	Response to ER stress
+RCN3	Response to ER stress
+TRIM25	Response to ER stress
+EXTL2	Response to ER stress
+MANF	Response to ER stress
+HYOU1	Response to ER stress
+TXNDC12	Response to ER stress
+WFS1	Response to ER stress
+UBA5	Response to ER stress
+PDIA6	Response to ER stress
+HSP90B1	Response to ER stress
+PDIA4	Response to ER stress
+P4HB	Response to ER stress
+DNAJB11	Response to ER stress
+HSPA5	Response to ER stress
+ERP29	Response to ER stress
+SEC16A	Response to ER stress
+CALR	Response to ER stress
+GFPT1	Response to ER stress
+ERLEC1	Response to ER stress
+SRPRB	Response to ER stress
+PDIA3	Response to ER stress
+UFM1	Response to ER stress
+SEC13	Response to ER stress
+SEC31A	Response to ER stress
+UGGT1	Response to ER stress
+CTH	Response to ER stress
+ADD1	Response to ER stress
+ERP44	Response to ER stress
+RACK1	Response to ER stress
+UBQLN1	Response to ER stress
+BAG3	Protein folding
+PRDX4	Protein folding
+FKBP9	Protein folding
+WFS1	Protein folding
+PDIA6	Protein folding
+HSP90B1	Protein folding
+PFDN1	Protein folding
+PDIA4	Protein folding
+P4HB	Protein folding
+DNAJB11	Protein folding
+HSPA5	Protein folding
+ERP29	Protein folding
+CALR	Protein folding
+PDIA3	Protein folding
+UGGT1	Protein folding
+PPID	Protein folding
+HSPE1	Protein folding
+LMAN1	Protein folding
+ERP44	Protein folding
+RPS26	Protein localization to ER
+RPL15	Protein localization to ER
+RPL36	Protein localization to ER
+RPS29	Protein localization to ER
+GBF1	Protein localization to ER
+PMM2	Protein localization to ER
+HSPA5	Protein localization to ER
+SEC16A	Protein localization to ER
+MIA2	Protein localization to ER
+RAB3GAP1	Protein localization to ER
+SEC63	Protein localization to ER
+RER1	Protein localization to ER
+SRP72	Protein localization to ER
+RPLP2	Protein localization to ER
+RPSA	Protein localization to ER
+SEC24A	Vesicle cargo loading
+SEC23A	Vesicle cargo loading
+MIA2	Vesicle cargo loading
+SEC13	Vesicle cargo loading
+SEC31A	Vesicle cargo loading
+SEC24D	Vesicle cargo loading
+RPS26	Cytoplasmic translation
+RPL15	Cytoplasmic translation
+RPL36	Cytoplasmic translation
+RPS29	Cytoplasmic translation
+RBM4	Cytoplasmic translation
+EIF4G1	Cytoplasmic translation
+EIF3J	Cytoplasmic translation
+EIF3I	Cytoplasmic translation
