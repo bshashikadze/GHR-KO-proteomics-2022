@@ -1,4 +1,4 @@
-Untitled
+2 way ANOVA with Tukey’s HSD and Cohen’s D
 ================
 BS
 07/08/2022
@@ -28,15 +28,9 @@ anova  <- perseus_data %>%
           group_by(Gene) %>% 
           summarise(anova_p_val = 
           summary(aov(Abundance ~ Genotype*Sex))[[1]][["Pr(>F)"]][1:3]) 
-```
 
-    ## Joining, by = "Animal"
-    ## `summarise()` has grouped output by 'Gene'. You can override using the `.groups` argument.
-
-``` r
-# adjust all resulting p-values for multiple hypothesis testing
+# correct all resulting p-values (pool) for multiple hypothesis testing
 anova$adjusted_p_val  <- p.adjust(anova$anova_p_val, method = "BH")
-
 
 # prepare empty data frame with proper comparisons
 anova_results <- as.data.frame(rep(c("genotype", "sex", "genotype:sex"), length = length(anova$Gene)))
@@ -53,11 +47,10 @@ anova_results  <- as.data.frame(cbind(anova, anova_results))
 
 # long to wide table format
 anova_results <- anova_results %>%
-               pivot_wider(names_from = Comparison, values_from = c(anova_p_val,                adjusted_p_val), Gene) %>% 
-               left_join(perseus_data)
+                 pivot_wider(names_from = Comparison, 
+                             values_from = c(anova_p_val, adjusted_p_val), Gene) %>% 
+                 left_join(perseus_data)
 ```
-
-    ## Joining, by = "Gene"
 
 ## Tukey’s HSD for significant interactions (genotype:sex adjusted p-val \<0.05)
 
@@ -69,11 +62,9 @@ data_tukey <- anova_results %>%
               pivot_longer(names_to = "Animal", values_to = "Abundance", 
                            -Gene) %>% 
               left_join(conditions)
-```
 
-    ## Joining, by = "Animal"
 
-``` r
+
 # for loop. for each gene which showed significant interaction from
 # 2 way anova, THSD is calculated. significant pairs are extracted
 
@@ -110,8 +101,6 @@ anova_with_TKHSD <- anova_results %>%
                rename(THSD_pair = 2))
 ```
 
-    ## Joining, by = "Gene"
-
 ## effect size calculation (Cohens’d)
 
 ``` r
@@ -123,24 +112,20 @@ anova_effect1 <- perseus_data %>%
                  summarise(mean=mean(Abundance), sd = sd(Abundance)) %>% 
                  pivot_wider(names_from = Genotype, 
                              values_from = c(mean, sd), Gene) %>% 
-  mutate(Cohens.d_genotype = (`mean_GHR-KO` - mean_Control)/sqrt((`sd_GHR-KO`^2 +   sd_Control^2)/2))
-```
+                 mutate(Cohens.d_genotype = 
+                (`mean_GHR-KO` - mean_Control)/sqrt((`sd_GHR-KO`^2 +   sd_Control^2)/2))
 
-    ## Joining, by = "Animal"
-    ## `summarise()` has grouped output by 'Gene'. You can override using the `.groups` argument.
 
-``` r
 anova_effect2 <- perseus_data %>% 
                  pivot_longer(names_to = "Animal", values_to = "Abundance", 
                            -Gene) %>% 
                  left_join(conditions) %>% 
                  group_by(Gene, Sex) %>% 
                  summarise(mean=mean(Abundance), sd = sd(Abundance)) %>% 
-                 pivot_wider(names_from = Sex, values_from = c(mean, sd), Gene) %>% mutate(Cohens.d_sex = (mean_Male - mean_Female)/sqrt((sd_Male^2 +    sd_Female^2)/2))
+                 pivot_wider(names_from = Sex, values_from = c(mean, sd), Gene) %>%
+                 mutate(Cohens.d_sex = 
+                (mean_Male - mean_Female)/sqrt((sd_Male^2 +    sd_Female^2)/2))
 ```
-
-    ## Joining, by = "Animal"
-    ## `summarise()` has grouped output by 'Gene'. You can override using the `.groups` argument.
 
 ## final data with anova, THSD, and effect size
 
@@ -149,9 +134,6 @@ final_data <- anova_effect1 %>%
   left_join(anova_effect2) %>% 
   left_join(anova_with_TKHSD)
 ```
-
-    ## Joining, by = "Gene"
-    ## Joining, by = "Gene"
 
 ``` r
 write.table(final_data, "anova_results.csv", row.names = F, sep = ",")
